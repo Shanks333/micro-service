@@ -2,18 +2,18 @@ server:
   port: 8100
 spring:
   application:
-    name: eureka-center-01
+    name: eureka-center-02
 
 eureka:
   instance:
     hostname: 127.0.0.1
-#  客户端调用地址
+  #  瀹㈡埛绔皟鐢ㄥ湴鍧�
   client:
     service-url:
       defaultZone: http://127.0.0.1:9100/eureka
     register-with-eureka: true
     fetch-registry: true
-  #测试环境、开发环境可以关闭自我保护机制，保证服务不可用时及时剔除
+  #娴嬭瘯鐜銆佸紑鍙戠幆澧冨彲浠ュ叧闂嚜鎴戜繚鎶ゆ満鍒讹紝淇濊瘉鏈嶅姟涓嶅彲鐢ㄦ椂鍙婃椂鍓旈櫎
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 2000
