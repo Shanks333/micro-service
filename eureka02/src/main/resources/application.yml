@@ -2,7 +2,7 @@ server:
   port: 9100
 spring:
   application:
-    name: eureka-center-02
+    name: eureka-center
 
 eureka:
   instance:
