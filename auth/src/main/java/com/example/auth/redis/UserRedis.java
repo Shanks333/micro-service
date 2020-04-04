@@ -36,4 +36,12 @@ public class UserRedis {
     public void insertUser(User user) {
         redisTemplate.opsForValue().set(PRE + user.getUsername(), user);
     }
+
+    /**
+     * 从缓存中删除用户信息
+     * @param username
+     */
+    public boolean delUserByUsername(String username) {
+        return redisTemplate.delete(PRE + username);
+    }
 }

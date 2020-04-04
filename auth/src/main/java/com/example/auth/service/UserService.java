@@ -17,4 +17,11 @@ public interface UserService {
      * @return 用户
      */
     User getUserByUsername(String username);
+
+    /**
+     * 更新用户密码
+     * @param user
+     * @return
+     */
+    Integer changePasswordByUser(User user);
 }

@@ -13,5 +13,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper {
 
+    /**
+     * 通过用户名查询用户
+     * @param username
+     * @return
+     */
     User selectUserByUsername(String username);
+
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    Integer updateUserPassword(User user);
 }
