@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-service
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1000
+        min-idle: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.31.159:8100/eureka/,http://192.168.31.159:9100/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+zuul:
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+  routes:
+    auth:
+      path: /auth/**
+      serviceId: AUTH
+
+
+
+custom:
+  url-config:
+    anno-urls: /auth/login
+    anno-ips: 127.0.0.1,192.168.31.124,192.168.31.159
+  redis-token: auth-token
