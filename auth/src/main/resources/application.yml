@@ -3,6 +3,38 @@ server:
 spring:
   application:
     name: auth
+#   ˝æ›ø‚≈‰÷√
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: select 1
+  # redisµƒ≈‰÷√
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 20
+
 eureka:
-  instance:
-    hostname: http://
+  client:
+    service-url:
+      defaultZone: http://192.168.31.159:8100/eureka/,http://192.168.31.159:9100/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+# mybatis≈‰÷√
+mybatis:
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*Mapper.xml
+
+custom:
+  redis-token: auth-token

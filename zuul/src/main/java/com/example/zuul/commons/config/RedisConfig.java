@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * @author Shanks
  * @version 1.0
- * @program cn.staplerx.eggplant.config
+ * @program cn.staplerx.eggplant.filter
  * @description redis的配置类
  * @date 2019/12/12 17:47
  */

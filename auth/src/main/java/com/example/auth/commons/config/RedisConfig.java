@@ -1,4 +1,4 @@
-package cn.staplerx.eggplant.config;
+package com.example.auth.commons.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

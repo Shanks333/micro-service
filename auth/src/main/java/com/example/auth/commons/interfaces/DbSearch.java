@@ -7,5 +7,6 @@ package com.example.auth.commons.interfaces;
  * @description 数据库查询
  * @date 2020/4/4
  */
-public interface DbSearch {
+public interface DbSearch<T> {
+    T select();
 }

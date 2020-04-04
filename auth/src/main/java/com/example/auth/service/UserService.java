@@ -1,5 +1,7 @@
 package com.example.auth.service;
 
+import com.example.auth.domain.User;
+
 /**
  * @author Shanks
  * @version 1.0
@@ -8,4 +10,11 @@ package com.example.auth.service;
  * @date 2020/4/4
  */
 public interface UserService {
+
+    /***
+     * 通过用户名查询用户
+     * @param username 用户名
+     * @return 用户
+     */
+    User getUserByUsername(String username);
 }

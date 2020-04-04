@@ -1,4 +1,4 @@
-package com.example.zuul.config;
+package com.example.zuul.filter;
 
 import com.example.zuul.commons.UrlConfig;
 import com.example.zuul.utils.JWTUtils;
@@ -18,7 +18,7 @@ import java.io.IOException;
 /**
  * @author Shanks
  * @version 1.0
- * @program com.example.zuul.config
+ * @program com.example.zuul.filter
  * @description
  * @date 2020/4/4 14:35
  */
@@ -86,7 +86,6 @@ public class AuthFilter extends ZuulFilter {
             return null;
         }
         String username = claims.get("username").toString();
-        System.out.println(username);
         if (username == null || redisTemplate.opsForHash().get(redisToken, username) == null) {
             responseErrorMessage(response);
             return null;

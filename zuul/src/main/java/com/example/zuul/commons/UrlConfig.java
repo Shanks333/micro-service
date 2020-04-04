@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/4/4 14:42
  */
 @Component
-@ConfigurationProperties(prefix = "custom.url-config")
+@ConfigurationProperties(prefix = "custom.url-filter")
 public class UrlConfig {
 
     /**
