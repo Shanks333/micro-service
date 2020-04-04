@@ -60,4 +60,6 @@ public class LoginController {
                 .setData("退出成功！")
                 .setStatus(200);
     }
+
+    @PostMapping("/")
 }

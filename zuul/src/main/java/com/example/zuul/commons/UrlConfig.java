@@ -1,5 +1,6 @@
 package com.example.zuul.commons;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Component;
  * @date 2020/4/4 14:42
  */
 @Component
-@ConfigurationProperties(prefix = "custom.url-filter")
+@ConfigurationProperties(prefix = "custom.url-config")
+@Data
 public class UrlConfig {
 
     /**
@@ -23,20 +25,4 @@ public class UrlConfig {
      * 可以通过的路径
      */
     private String[] annoIps;
-
-    public String[] getAnnoUrls() {
-        return annoUrls;
-    }
-
-    public void setAnnoUrls(String[] annoUrls) {
-        this.annoUrls = annoUrls;
-    }
-
-    public String[] getAnnoIps() {
-        return annoIps;
-    }
-
-    public void setAnnoIps(String[] annoIps) {
-        this.annoIps = annoIps;
-    }
 }

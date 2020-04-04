@@ -26,8 +26,6 @@ zuul:
       path: /auth/**
       serviceId: AUTH
 
-
-
 custom:
   url-config:
 #    不用token校验的路径

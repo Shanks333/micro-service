@@ -113,7 +113,6 @@ public class AuthFilter extends ZuulFilter {
      * @return
      */
     private boolean isAnnoIp( HttpServletRequest request) {
-
         String visitorIp = getVisitorIp(request);
         for (String ip : urlConfig.getAnnoIps()) {
             if (ip.equals(visitorIp)) {
