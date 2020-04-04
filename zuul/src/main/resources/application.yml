@@ -23,13 +23,14 @@ zuul:
   ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
   routes:
     auth:
-      path: /auth/login
+      path: /auth/**
       serviceId: AUTH
 
 
 
 custom:
   url-config:
+#    不用token校验的路径
     anno-urls: /auth/login
     anno-ips: 127.0.0.1,192.168.31.124,192.168.31.159
   redis-token: auth-token
