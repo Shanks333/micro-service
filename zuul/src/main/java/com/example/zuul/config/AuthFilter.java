@@ -57,15 +57,27 @@ public class AuthFilter extends ZuulFilter {
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
         HttpServletResponse response = context.getResponse();
+
+        // 验证ip是否可访问
+        if (!isAnnoIp(request)) {
+            responseErrorMessage(response);
+            return null;
+        }
+
+        // 验证是否要鉴权的路径
+        for (String url : urlConfig.getAnnoUrls()) {
+            if (url.equals(request.getRequestURI())) {
+                return null;
+            }
+        }
+
+        // 验证token
         String token = request.getHeader("Authorization");
         if (token == null) {
             responseErrorMessage(response);
             return null;
         }
-        if (!isAnno(request)) {
-            responseErrorMessage(response);
-            return null;
-        }
+        // 验证token的有效性
         Claims claims = null;
         try {
             claims = jwtUtils.parseJWT(token);
@@ -100,21 +112,15 @@ public class AuthFilter extends ZuulFilter {
      * 判断是否需要放行的url
      * @return
      */
-    private boolean isAnno( HttpServletRequest request) {
+    private boolean isAnnoIp( HttpServletRequest request) {
 
         String visitorIp = getVisitorIp(request);
         for (String ip : urlConfig.getAnnoIps()) {
-            if (!ip.equals(visitorIp)) {
-                return false;
+            if (ip.equals(visitorIp)) {
+                return true;
             }
         }
-
-        for (String url : urlConfig.getAnnoUrls()) {
-            if (!url.equals(request.getRequestURI())) {
-                return false;
-            }
-        }
-        return true;
+        return false;
     }
 
     /***

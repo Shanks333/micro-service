@@ -23,7 +23,7 @@ zuul:
   ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
   routes:
     auth:
-      path: /auth/**
+      path: /auth/login
       serviceId: AUTH
 
 
