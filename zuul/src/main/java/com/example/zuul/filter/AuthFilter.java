@@ -86,7 +86,7 @@ public class AuthFilter extends ZuulFilter {
             return null;
         }
         String username = claims.get("username").toString();
-        if (username == null || redisTemplate.opsForHash().get(redisToken, username) == null) {
+        if (username == null || !token.equals(redisTemplate.opsForHash().get(redisToken, username))) {
             responseErrorMessage(response);
             return null;
         }

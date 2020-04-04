@@ -29,6 +29,6 @@ zuul:
 custom:
   url-config:
 #    不用token校验的路径
-    anno-urls: /auth/login
+    anno-urls: /auth/login,/auth/update-password
     anno-ips: 127.0.0.1,192.168.31.124,192.168.31.159
   redis-token: auth-token
