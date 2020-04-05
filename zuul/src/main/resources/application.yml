@@ -24,7 +24,10 @@ zuul:
   routes:
     auth:
       path: /auth/**
-      serviceId: AUTH
+      serviceId: AUTH-SERVER
+    student:
+      path: /student/**
+      serviceId: STUDENT-SERVER
 
 custom:
   url-config:

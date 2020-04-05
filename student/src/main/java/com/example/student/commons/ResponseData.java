@@ -1,4 +1,4 @@
-package com.example.auth.commons;
+package com.example.student.commons;
 
 import lombok.Getter;
 
