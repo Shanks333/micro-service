@@ -13,6 +13,17 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+#    RabbitMQ配置
+  rabbitmq:
+    host: 192.168.31.159
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: testhost
+    template:
+      exchange: test.direct
+      routing-key: abc
+
 #    mybatis配置
 mybatis:
   configuration:
@@ -29,3 +40,6 @@ eureka:
 
 custom:
   page-size: 3
+  mq:
+    exchange: stu_log
+
