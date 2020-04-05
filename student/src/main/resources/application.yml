@@ -7,7 +7,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/sutdent?useUnicode=true&character=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&character=UTF-8&serverTimezone=UTC
     username: root
     password: root
   redis:
@@ -26,3 +26,6 @@ eureka:
       defaultZone: http://192.168.31.159:8100/eureka/,http://192.168.31.159:9100/eureka/
     register-with-eureka: true
     fetch-registry: true
+
+custom:
+  page-size: 3

@@ -1,7 +1,6 @@
 package com.example.student.commons.web;
 
 import com.example.student.commons.ResponseData;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -14,7 +13,7 @@ import javax.validation.ConstraintViolationException;
  * @description 统一异常处理
  * @date 2020/4/4 19:43
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class ErrorHandlerException {
 
     @ExceptionHandler({ConstraintViolationException.class})

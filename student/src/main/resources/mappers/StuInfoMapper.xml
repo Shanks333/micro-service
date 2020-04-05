@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.student.mapper.StuInfoMapper">
+    <insert id="insertStuInfo">
+        insert into `stu_info`
+        values (default, #{stuId}, #{stuName}, #{stuSex}, #{stuAge}, #{stuPlace})
+    </insert>
+    <update id="updateStuInfo">
+        update `stu_info`
+        <set>
+            <if test="stuId != null">stu_id = #{stuId}</if>
+            <if test="stuName != null">stu_name = #{stuName}</if>
+            <if test="stuSex != null">stu_sex = #{stuSex}</if>
+            <if test="stuAge != null">stu_id = #{stuAge}</if>
+            <if test="stuPlace != null">stu_place = #{stuPlace}</if>
+        </set>
+        where
+          id = #{id};
+    </update>
+    <delete id="delStuInfoById">
+        delete from `stu_info`
+        where
+          id = #{id}
+    </delete>
+    <delete id="delStuInfoByStuId">
+        delete from `stu_info`
+        where
+          stu_id = #{stuId}
+    </delete>
 
-
-</mapper>   
+    <select id="selectStuInfosByPage" resultType="com.example.student.domain.StuInfo">
+        select
+          id,
+          stu_id,
+          stu_name,
+          stu_sex,
+          stu_age,
+          stu_place
+        from
+          stu_info
+        limit #{start}, #{pageSize}
+    </select>
+</mapper>

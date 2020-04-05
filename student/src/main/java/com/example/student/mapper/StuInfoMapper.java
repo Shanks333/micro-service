@@ -1,6 +1,10 @@
 package com.example.student.mapper;
 
+import com.example.student.commons.Page;
+import com.example.student.domain.StuInfo;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Shanks
@@ -12,4 +16,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StuInfoMapper {
 
+    List<StuInfo> selectStuInfosByPage(Page page);
+
+    Integer insertStuInfo(StuInfo stuInfo);
+
+    Integer delStuInfoById(String id);
+
+    Integer delStuInfoByStuId(String stuId);
+
+    Integer updateStuInfo(StuInfo stuInfo);
 }
