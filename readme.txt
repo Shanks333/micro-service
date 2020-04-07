@@ -2,4 +2,5 @@
 
 第一天，搭建了高可用的注册中心
 第二天，使用zuul网关实现鉴权，完成登录、退出、修改密码的服务
-第三题，完成了增删改查业务逻辑，调试了springcloud整合rabbitmq
+第三天，完成了增删改查业务逻辑，调试了springcloud整合rabbitmq
+第四天，使用RabbitMQ完成日志记录功能
