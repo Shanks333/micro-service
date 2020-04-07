@@ -21,8 +21,8 @@ spring:
     password: admin
     virtual-host: testhost
     template:
-      exchange: test.direct
-      routing-key: abc
+      exchange: student.direct
+      routing-key: student-log
 
 #    mybatis配置
 mybatis:
@@ -40,6 +40,4 @@ eureka:
 
 custom:
   page-size: 3
-  mq:
-    exchange: stu_log
 
