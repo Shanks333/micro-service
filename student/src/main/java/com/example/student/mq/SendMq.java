@@ -19,10 +19,10 @@ public class SendMq {
 
     /**
      * 发送消息
-     * @param msg 消息对象，需要实现序列化接口
+     * @param msg 消息对象
      */
-    public void send(Object msg) {
-        System.out.println(amqpTemplate);
+    public void send(String msg) {
+        amqpTemplate.convertAndSend(msg);
     }
 
 }

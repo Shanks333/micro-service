@@ -1,5 +1,6 @@
 package com.example.student.mq;
 
+import com.alibaba.fastjson.JSON;
 import com.example.student.domain.StuLog;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,10 @@ public class SendMqTest {
 
     @Test
     public void send() {
-        amqpTemplate.convertAndSend(new StuLog());
+        StuLog stuLog = new StuLog();
+        stuLog.setId(1);
+        stuLog.setUsername("测试");
+        stuLog.setDesc("用来测试RabbitMQ");
+        sendMq.send(JSON.toJSONString(stuLog));
     }
 }

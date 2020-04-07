@@ -40,4 +40,6 @@ eureka:
 
 custom:
   page-size: 3
+  header:
+    username: username
 
