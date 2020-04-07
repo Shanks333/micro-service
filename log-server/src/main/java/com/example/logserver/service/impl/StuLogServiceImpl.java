@@ -1,5 +1,6 @@
 package com.example.logserver.service.impl;
 
+import com.example.logserver.domain.StuLog;
 import com.example.logserver.mapper.StuLogMapper;
 import com.example.logserver.service.StuLogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,4 +18,9 @@ public class StuLogServiceImpl implements StuLogService {
 
     @Autowired
     private StuLogMapper stuLogMapper;
+
+    @Override
+    public Boolean addStuLog(StuLog stuLog) {
+        return stuLogMapper.insertStuLog(stuLog) > 0;
+    }
 }

@@ -3,4 +3,12 @@
 <mapper namespace="com.example.logserver.mapper.StuLogMapper">
 
 
-</mapper>   
+    <insert id="insertStuLog">
+        insert into stu_log
+        values (
+          default,
+          #{username},
+          #{desc}
+        )
+    </insert>
+</mapper>

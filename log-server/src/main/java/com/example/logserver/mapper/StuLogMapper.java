@@ -1,5 +1,6 @@
 package com.example.logserver.mapper;
 
+import com.example.logserver.domain.StuLog;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,4 +12,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface StuLogMapper {
+
+    Integer insertStuLog(StuLog stuLog);
 }
