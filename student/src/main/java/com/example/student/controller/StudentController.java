@@ -48,7 +48,8 @@ public class StudentController {
     }
 
     @PostMapping("/stuinfo")
-    public ResponseData changeStuInfo(StuInfo stuInfo, HttpServletRequest request) {
+    public ResponseData changeStuInfo(@RequestBody StuInfo stuInfo, HttpServletRequest request) {
+        System.out.println(stuInfo);
         if (stuInfoService.changeStuInfo(stuInfo)) {
             StuLog log = new StuLog();
             log.setUsername(request.getHeader(usernameHeader));

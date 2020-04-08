@@ -27,7 +27,7 @@ zuul:
       serviceId: AUTH-SERVER
     student:
       path: /student/**
-      serviceId: STUDENT-SERVER
+      serviceId: RIBBON-STUDENT-SERVER
 
 custom:
   url-config:
