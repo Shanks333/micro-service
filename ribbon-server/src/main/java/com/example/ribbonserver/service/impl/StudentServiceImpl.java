@@ -1,6 +1,7 @@
 package com.example.ribbonserver.service.impl;
 
 import com.example.ribbonserver.commons.ResponseData;
+import com.example.ribbonserver.domain.StuInfo;
 import com.example.ribbonserver.service.StudentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class StudentServiceImpl implements StudentService {
     @HystrixCommand(fallbackMethod = "errorResult")
     public ResponseData getStuInfosByPage(String page) {
         return restTemplate.getForObject("http://student-server/stuinfos/page-" + page, ResponseData.class);
+    }
+
+    @Override
+    public ResponseData changeStuInfo(StuInfo stuInfo) {
+        return restTemplate.postForObject("http://student-server/stuinfo", stuInfo, ResponseData.class);
     }
 
     public ResponseData errorResult(String page) {

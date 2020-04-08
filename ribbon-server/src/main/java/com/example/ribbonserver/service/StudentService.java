@@ -1,6 +1,7 @@
 package com.example.ribbonserver.service;
 
 import com.example.ribbonserver.commons.ResponseData;
+import com.example.ribbonserver.domain.StuInfo;
 
 /**
  * @author Shanks
@@ -12,4 +13,6 @@ import com.example.ribbonserver.commons.ResponseData;
 public interface StudentService {
 
     ResponseData getStuInfosByPage(String page);
+
+    ResponseData changeStuInfo(StuInfo stuInfo);
 }
