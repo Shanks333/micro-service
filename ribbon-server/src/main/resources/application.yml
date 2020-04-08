@@ -1,0 +1,12 @@
+server:
+  port: 11000
+spring:
+  application:
+    name: ribbon-student-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.31.159:8100/eureka/,http://192.168.31.159:9100/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
