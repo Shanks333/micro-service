@@ -1,0 +1,15 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: feign-student-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.31.159:8100/eureka/,http://192.168.31.159:9100/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+feign:
+  hystrix:
+    enabled: true
